@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SkateBoard
+  - Thorns
+  - Carrots
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4171072623
+    locked: 0
+  - name: Middleground
+    uniqueID: 1613002063
+    locked: 0
+  - name: Foreground
+    uniqueID: 2660022407
     locked: 0
