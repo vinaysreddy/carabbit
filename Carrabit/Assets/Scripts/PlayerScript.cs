@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]float speed = 0f;
     SpriteRenderer sp;
-    [SerializeField] float maxPos=0f;
+    [SerializeField] float maxPos=0f    ;
     bool isMove = true;
     void Start()
     {
