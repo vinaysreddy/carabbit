@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarrotEating : MonoBehaviour
 {
-    public GameObject hedgehog;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -20,22 +20,20 @@ public class CarrotEating : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
             Destroy(gameObject);
-
+            GameManager.instance.IncrementScore();
+          
+        }
         else if (collision.gameObject.tag == "groundbase")
         {
-            thorns();
-        }
-        else if (collision.gameObject.tag == "Thorns")
-        {
-             Destroy(gameObject);
+            Destroy(gameObject);
+            //missiedexplosion particle effects
         }
 
-        void thorns()
-        {
-            Instantiate(hedgehog, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
+
+
+
     }
 
    

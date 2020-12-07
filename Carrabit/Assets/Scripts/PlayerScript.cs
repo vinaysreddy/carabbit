@@ -22,8 +22,8 @@ public class PlayerScript : MonoBehaviour
         {
             Move();
         }
-        
-        void Move()
+    }
+    void Move()
         {
             float inputX = Input.GetAxis("Horizontal");
              transform.position += Vector3.right * inputX * speed * Time.deltaTime;
@@ -38,5 +38,14 @@ public class PlayerScript : MonoBehaviour
         }
 
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+            Destroy(gameObject);
     }
+
+
+
+
+
 }

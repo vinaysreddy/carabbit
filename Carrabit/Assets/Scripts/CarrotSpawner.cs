@@ -9,6 +9,14 @@ public class CarrotSpawner : MonoBehaviour
    [SerializeField] GameObject[] Food=new GameObject[2];
     [SerializeField] float maxX = 0f;
     // Start is called before the first frame update
+    public static CarrotSpawner  instance;
+    private void Awake()
+    {
+        if(instance==null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         StartSpawining();
