@@ -29,6 +29,7 @@ public class CarrotEating : MonoBehaviour
         {
             Destroy(gameObject);
             //missiedexplosion particle effects
+            GameManager.instance.DecrementScore();
         }
 
 
