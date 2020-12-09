@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]float speed = 0f;
     SpriteRenderer sp;
     [SerializeField] float maxPos=0f    ;
-    bool isMove = true;
+    public bool isMove = true;
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();

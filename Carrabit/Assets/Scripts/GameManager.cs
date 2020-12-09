@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     bool gameOver;
     public Text ScoreText;
     public Text LivesText;
-    GameObject finder;
+    public Text gameoverScoreText;
+
+    public GameObject gameoverpanel;
 
     private void Awake()
     {
@@ -30,9 +32,12 @@ public class GameManager : MonoBehaviour
     }
     public void IncrementScore()
     { 
-        score++;
-       ScoreText.text = score.ToString();
-        print(score);
+        if(!gameOver)
+        {
+            score++;
+            ScoreText.text = score.ToString();
+        //print(score);
+        }
     }
 
     public void DecrementScore()
@@ -52,9 +57,11 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        finder = GameObject.FindWithTag("Player");
-        Destroy(finder);
-        print("Game Over");
+        
+        CarrotSpawner.instance.StopSpawining();
+        GameObject.FindWithTag("Player").GetComponent<PlayerScript>().isMove = false;
+        gameoverpanel.SetActive(true);
+        gameoverScoreText.text = score.ToString();
         
     }
 }

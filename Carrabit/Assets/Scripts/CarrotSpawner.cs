@@ -53,7 +53,11 @@ IEnumerator Freefall()
     {
         StartCoroutine("Freefall");
     }
-   
+    public void StopSpawining()
+    {
+        StopCoroutine("Freefall");
+    }
+
 
 
 }
