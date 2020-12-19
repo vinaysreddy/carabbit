@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] AudioSource a;
     public static GameManager instance;
     int score = 0;
     int lives = 3;
@@ -18,11 +19,14 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        a = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
         {
             gameOver = true;
             GameOver();
+            
+
         }
        
     }
@@ -62,6 +68,7 @@ public class GameManager : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<PlayerScript>().isMove = false;
         gameoverpanel.SetActive(true);
         gameoverScoreText.text = score.ToString();
+        
         
     }
 }

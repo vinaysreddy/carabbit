@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CarrotSpawner : MonoBehaviour
 {
-
+    
     [SerializeField] float timeInterval = 3f;
    [SerializeField] GameObject[] Food=new GameObject[2];
     [SerializeField] float maxX = 0f;
